@@ -5,6 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Email Debasish Mukherjee</title>
     <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src 'self'; script-src 'self'; style-src 'self' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self'; base-uri 'self'; frame-ancestors 'self'"
+    />
+    <meta
       name="description"
       content="Choose how to send an email to Debasish Mukherjee."
     />
@@ -55,6 +59,43 @@
       </p>
     </main>
 
+    <div class="twin-widget" data-twin-widget data-state="closed">
+      <button
+        class="twin-bubble"
+        type="button"
+        data-twin-toggle
+        aria-expanded="false"
+        aria-controls="twin-panel"
+      >
+        <span>Digital Twin</span>
+      </button>
+      <section class="twin-panel" id="twin-panel" data-twin-panel>
+        <header class="twin-header">
+          <div>
+            <p class="twin-title">Debasish's Digital Twin</p>
+            <p class="twin-subtitle">Ask about experience, skills, or projects.</p>
+          </div>
+          <button class="twin-close" type="button" data-twin-close aria-label="Close chat">
+            x
+          </button>
+        </header>
+        <div class="twin-messages" data-twin-messages></div>
+        <form class="twin-input" data-twin-form>
+          <input
+            type="text"
+            name="message"
+            placeholder="Ask about Debasish's profile..."
+            autocomplete="off"
+            data-twin-input
+            required
+          />
+          <button type="submit">Send</button>
+        </form>
+        <p class="twin-status" data-twin-status></p>
+      </section>
+    </div>
+
     <script src="email.js"></script>
+    <script src="twin.js"></script>
   </body>
 </html>

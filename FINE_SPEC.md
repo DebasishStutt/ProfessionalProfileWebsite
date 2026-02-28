@@ -1,7 +1,7 @@
 ﻿# Fine Spec: Debasish Mukherjee Personal Website
 
 ## Goal
-Create a single-page professional website that presents Debasish Mukherjee's profile and enables contact only via email or LinkedIn.
+Create a professional website that presents Debasish Mukherjee's profile and enables contact only via email or LinkedIn, plus an AI-powered Digital Twin chat widget.
 
 ## Inputs
 - Debasish_Resume.pdf
@@ -10,12 +10,16 @@ Create a single-page professional website that presents Debasish Mukherjee's pro
 ## Pages
 - index.html (main profile page)
 - email.html (email compose options page)
+- Digital Twin widget appears on all pages.
 
 ## Functional Requirements
 - Display name, title, summary, highlights, experience, skills, certifications, education, and languages.
 - Provide contact options only via email and LinkedIn.
 - Do not display or link to any phone numbers.
 - Email actions must open a new window that offers multiple ways to compose an email.
+- Digital Twin widget must float at the bottom-right and allow chatting about the profile.
+- Widget should keep chat scrolled to the latest messages while the page scrolls.
+- LLM calls must go through a server-side proxy using OpenRouter.
 
 ## Design Direction
 - Professional, high-tech aesthetic with a dark gradient background and cyan/amber accents.
@@ -24,6 +28,7 @@ Create a single-page professional website that presents Debasish Mukherjee's pro
 
 ## Technical Stack
 - HTML5, modern CSS (Grid, custom properties), and ES2023 JavaScript.
+- Python 3 local server for OpenRouter proxy (`server.py`).
 - No build step required.
 
 ## Accessibility & Performance
@@ -33,9 +38,11 @@ Create a single-page professional website that presents Debasish Mukherjee's pro
 
 ## Tests
 - tests/test_site.py verifies contact methods and absence of phone numbers across both pages.
+- tests/test_digital_twin.py verifies widget presence and absence of API keys in frontend.
 
 ## Acceptance Criteria
 - Page renders with all sections and a professional, high-tech look.
 - Email and LinkedIn are the only contact methods visible.
 - No phone numbers appear anywhere on the site.
 - Responsive and accessible across common screen sizes.
+- Digital Twin widget opens from a floating bubble and can exchange messages.
